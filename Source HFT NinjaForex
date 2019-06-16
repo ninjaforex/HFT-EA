@@ -113,6 +113,6 @@ double main_sl;
 double main_tp;
 double main_be_profit;
 double main_be_offset;
-static int      account_number;
-static bool     is_ok;
+static int       
+static bool     
 
