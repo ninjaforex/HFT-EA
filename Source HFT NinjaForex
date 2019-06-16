@@ -1,18 +1,18 @@
-//+------------------------------------------------------------------+
-//|                                         HFT Slow @NinjaForex.mq4 |
-//|                         Mail : Memberforex@gmail.com @NinjaForex |
-//|                                         https://memberforex.com/ |
-//|      Credit:                                                     |
-//|       Website   : http://www.memberforex.com                     |
-//|       Telegram  : https://t.me/RObotForex                        |
-//|       Facebook  : https://www.facebook.com/NinjaForex            |
-//|       Instagram : https://www.instagram.com/NinjaForex           | 
-//|       Myfxbook : Myfxbook.com/members/NinjaForex                 |                
-//+------------------------------------------------------------------+
+
+HFT Slow @NinjaForex.mq4 
+Mail : Memberforex@gmail.com @NinjaForex 
+https://memberforex.com/ 
+Credit:                                                   
+Website   : http://www.memberforex.com                     
+Telegram  : https://t.me/RobotForex                        
+Facebook  : https://www.facebook.com/NinjaForex            
+Instagram : https://www.instagram.com/NinjaForex            
+Myfxbook : Myfxbook.com/members/NinjaForex                                
+
 #property copyright   "HFT Slow @NinjaForex | Mail : Memberforex@gmail.com | Facebook Page: @NinjaForex "
 #property link        "https://memberforex.com/store"
 #property version     "3.03"
-#property description "Subscribe Premium | www.memberforex.com/store/, M1 or M5, fxblue.com/users/ninjaforex6 | fxblue.com/users/memberforex2"
+Subscribe Premium | www.memberforex.com/store/, M1 or M5, fxblue.com/users/ninjaforex6 | fxblue.com/users/memberforex2
 
 
 
@@ -23,12 +23,12 @@
 //---- external parameters --------------------------------------------------------------------+
 
 extern string    DispEquityProtection         = "--------";
-extern bool      EquityProtection            = true;          // if true, then the expert will protect the account equity to the percent specified
-extern string    AverageEquityProtection      ="percent of the account to protect on a set of trades";
-extern int       AccountEquityPercentProtection= 75; // percent of the account to protect on a set of trades
+extern bool      EquityProtection            = true;          // for xxxx
+extern string    AverageEquityProtection      ="for xxxx";
+extern int       AccountEquityPercentProtection= 75; // for xxxx
 
-extern bool   UseMM                           = true;   // enable/disable auto-calculation for size of lots: false = constant size of lots (value of parameter "Lots"); true = calculate size of lots by percent from FreeMargin (parameter "Risk")
-extern double Lots                            = 0.01;   // size of lots (used if UseMM = false)
+extern bool   UseMM                           = true;   // for xxxx
+extern double Lots                            = 0.01;   // for xxxx
 extern double MinLots                         = 0.01;
 extern double MaxLots                         = 100000.0;
 extern double Risk                            = 3.0;
