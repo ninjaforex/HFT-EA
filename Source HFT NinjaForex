@@ -43,9 +43,9 @@ extern int    TrailingDistance                = 1;      // for xxxx
 extern int    NinjaForex_HFT_Period           = 7;
 extern int    NinjaForex_HFT_Shift            = 0;
 extern int    NinjaForex_HFT_Method           = 0; // (0-3)
-extern double MaxSpreadWithCommission         = 10.0;   // for xxxx
-extern double DefaultCommisionPoints          = 3;      // for xxxx
-extern string RangeFilterNote                 = "xxxxxxx";
+extern double MaxSpreadPlusCommission         = 10.0;   // for xxxx
+extern double MinCommisionPoints              = 3;      // for xxxx
+extern string FilterNote                      = "xxxxxxx";
 extern string NinjaForex_HFTMethodNote        = "x: 0 xx: 1 xxx: 2 xxxx 3";
 extern int    Slippage                        = 3;      // for xxxx
 extern int    MagicNumber                     = 8899;
@@ -100,13 +100,12 @@ double minlots;
 double maxlots;
 string symbol;
 double risk;
-double maxSpreadWithCommission;
+double maxSpreadPlusCommission;
 double trailingLimit;
 double trailingDistance;
 double rangeFilter;
 bool   gotCommissionPointsFromTrade;
-double commissionPoints;
-int    spreadHistoryCount = 0;
+double commissionPoints; 
 string objname_hline;
 bool   is_testing;
 double main_sl;
