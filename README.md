@@ -1,4 +1,4 @@
-# HFT-EA Build 1170
+# HFT-EA V3 xxx Build 1170
 HFT EA | High Frequensi Trading 
 
 
