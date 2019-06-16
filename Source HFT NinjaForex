@@ -1,0 +1,118 @@
+//+------------------------------------------------------------------+
+//|                                         HFT Slow @NinjaForex.mq4 |
+//|                         Mail : Memberforex@gmail.com @NinjaForex |
+//|                                         https://memberforex.com/ |
+//|      Credit:                                                     |
+//|       Website   : http://www.memberforex.com                     |
+//|       Telegram  : https://t.me/RObotForex                        |
+//|       Facebook  : https://www.facebook.com/NinjaForex            |
+//|       Instagram : https://www.instagram.com/NinjaForex           | 
+//|       Myfxbook : Myfxbook.com/members/NinjaForex                 |                
+//+------------------------------------------------------------------+
+#property copyright   "HFT Slow @NinjaForex | Mail : Memberforex@gmail.com | Facebook Page: @NinjaForex "
+#property link        "https://memberforex.com/store"
+#property version     "3.03"
+#property description "Subscribe Premium | www.memberforex.com/store/, M1 or M5, fxblue.com/users/ninjaforex6 | fxblue.com/users/memberforex2"
+
+
+
+//---- constant values ------------------------------------------------------------------------+
+#define Account_Number                  xxxxxx     // write here the number of account; 0 = does not check the number of account
+#define IndicatorFileName_NinjaForex_HFT            "NinjaForex_HFT"
+
+//---- external parameters --------------------------------------------------------------------+
+
+extern string    DispEquityProtection         = "--------";
+extern bool      EquityProtection            = true;          // if true, then the expert will protect the account equity to the percent specified
+extern string    AverageEquityProtection      ="percent of the account to protect on a set of trades";
+extern int       AccountEquityPercentProtection= 75; // percent of the account to protect on a set of trades
+
+extern bool   UseMM                           = true;   // enable/disable auto-calculation for size of lots: false = constant size of lots (value of parameter "Lots"); true = calculate size of lots by percent from FreeMargin (parameter "Risk")
+extern double Lots                            = 0.01;   // size of lots (used if UseMM = false)
+extern double MinLots                         = 0.01;
+extern double MaxLots                         = 100000.0;
+extern double Risk                            = 3.0;
+extern int    Bar_Mode                        = 0; //2;      // (0-3) mode for xxxx
+extern int    RangeFilter                     = 10;      // for xxxx
+extern double StopLoss                        = 0;     // for xxxx
+extern double TakeProfit                      = 10;      // for xxxx
+extern double MoveToxx                        = 5;     // for xxxx
+extern double MoveToxxx                       = 2;      // for xxxx
+extern int    TrailingLimit                   = 3;      // for xxxx
+extern int    TrailingDistance                = 1;      // for xxxx
+extern int    NinjaForex_HFT_Period           = 7;
+extern int    NinjaForex_HFT_Shift            = 0;
+extern int    NinjaForex_HFT_Method           = 0; // (0-3)
+extern double MaxSpreadWithCommission         = 10.0;   // for xxxx
+extern double DefaultCommisionPoints          = 3;      // for xxxx
+extern string RangeFilterNote                 = "xxxxxxx";
+extern string NinjaForex_HFTMethodNote        = "x: 0 xx: 1 xxx: 2 xxxx 3";
+extern int    Slippage                        = 3;      // for xxxx
+extern int    MagicNumber                     = 8899;
+extern string TradeComment                    = "NinjaForex HFT";
+extern color  ColorBuy                        = clrBlue;   // color Buy-orders
+extern color  ColorSell                       = clrRed; // color Sell-orders
+extern bool   ShowComment                     = true;   // enable/disable show comment on chart
+extern bool   WriteDebugLog                   = false;  // enable/disable write to log the debug information
+extern string ___NinjaForex_HFT____           = "---------------------------------------------";
+extern bool   UseFilterNinjaForex_HFT         = false;   // true = use indicator "NinjaForex_HFT"; false = does not use indicator "for xxxx"
+extern int    NinjaForex_HFT_Period           = 1; //5;     // parameter for indicator "NinjaForex_HFT"
+
+//----- global variables ----------------------------------------------------------------------+
+
+extern string partInRange = "for xxxx";
+extern int     EntryHourFrom = 2;          
+extern int     EntryHourTo   = 22;        
+extern int     FridayEndHour = 18;        
+ 
+//|------------------------------------------
+// TICK NinjaForex_HFT
+//|__________________________________________
+extern int     TicksPeriod =    5;
+extern int     Maxxxx      =    5 ;// 50; //for xxxx
+int maxsize                =  240; // for xxxx
+extern int     Length      =    5; //15; //for xxxx
+extern int     NinjaForex_HFT_Mode     =     1; //2; // for xxxx
+extern int     Ticks    =     0; //for xxxx
+extern int     Secs     =    1; // 3; //5; //for xxxx
+extern string  Dispxxxx =  " for xxxx";
+ 
+double Ticks[];
+double Bulls[];
+double Bears[]; 
+   
+double max =  -1000000.0;
+double min =   1000000.0;
+
+double stoplevel;
+string message;
+////////////////////////////////////////////////////
+
+
+int    slippage;
+int    digits;
+double point;
+int    my_digits;
+double my_point;
+int    pips_digits;
+int    lots_digits;
+double minlots;
+double maxlots;
+string symbol;
+double risk;
+double maxSpreadWithCommission;
+double trailingLimit;
+double trailingDistance;
+double rangeFilter;
+bool   gotCommissionPointsFromTrade;
+double commissionPoints;
+int    spreadHistoryCount = 0;
+string objname_hline;
+bool   is_testing;
+double main_sl;
+double main_tp;
+double main_be_profit;
+double main_be_offset;
+static int      account_number;
+static bool     is_ok;
+
