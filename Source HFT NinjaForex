@@ -22,11 +22,10 @@ Subscribe Premium | www.memberforex.com/store/, M1 or M5, fxblue.com/users/ninja
 
 //---- external parameters --------------------------------------------------------------------+
 
-extern string    DispEquityProtection         = "--------";
-extern bool      EquityProtection            = true;          // for xxxx
-extern string    AverageEquityProtection      ="for xxxx";
 extern int       AccountEquityPercentProtection= 75; // for xxxx
-
+extern bool      EquityProtection            = true;          // for xxxx
+extern string    DispEquityProtection         = "--------";
+extern string    AverageEquityProtection      ="for xxxx";
 extern bool   UseMM                           = true;   // for xxxx
 extern double Lots                            = 0.01;   // for xxxx
 extern double MinLots                         = 0.01;
